@@ -1,1 +1,18 @@
-<p>event-card works!</p>
+
+<mat-card *ngFor="let event of events" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title> {{ event.title }} </mat-card-title>
+      <mat-card-subtitle> {{ event.subtitle }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ event.image }}" alt="Dummie photo">
+    <mat-card-content>
+      <p>
+        {{ event.description | stringToTemplate }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+    </mat-card-actions>
+  </mat-card>
+  
