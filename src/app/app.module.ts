@@ -13,7 +13,7 @@ import { HomeComponent } from './ticket-app/pages/home/home.component';
 import { SessionListComponent } from './ticket-app/pages/session-list/session-list.component';
 import { ShoppingCartComponent } from './ticket-app/pages/shopping-cart/shopping-cart.component';
 import { MaterialModule } from './material/material.module';
-import { StringToTemplatePipe } from './pipes/string-to-template.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { StringToTemplatePipe } from './pipes/string-to-template.pipe';
     HomeComponent,
     SessionListComponent,
     ShoppingCartComponent,
-    StringToTemplatePipe
+    OrderByPipe,
     
   ],
   imports: [

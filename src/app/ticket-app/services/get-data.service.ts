@@ -17,4 +17,10 @@ export class GetDataService {
   getEvents(): Observable<Event[]> {
     return this.http.get<Event[]>( `${this.baseUrl}`);
   }
+
+  // getSortData(events: Event[]): Event[] {
+  //   return events.sort( ( a, b ) => {
+  //     return <any> new Date( b.endDate ) - <any> new Date( a.endDate )
+  //   } )
+  // }
 }
