@@ -7,11 +7,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { EventCardComponent } from './ticket-app/pages/event-card/event-card.component';
-import { HeaderComponent } from './ticket-app/pages/header/header.component';
+import { EventCardComponent } from './ticket-app/components/event-card/event-card.component';
+import { HeaderComponent } from './ticket-app/components/header/header.component';
 import { HomeComponent } from './ticket-app/pages/home/home.component';
 import { SessionListComponent } from './ticket-app/pages/session-list/session-list.component';
-import { ShoppingCartComponent } from './ticket-app/pages/shopping-cart/shopping-cart.component';
+import { ShoppingCartComponent } from './ticket-app/components/shopping-cart/shopping-cart.component';
 import { MaterialModule } from './material/material.module';
 import { OrderByPipe } from './pipes/order-by.pipe';
 

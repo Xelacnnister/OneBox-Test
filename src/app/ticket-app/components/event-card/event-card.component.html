@@ -27,7 +27,7 @@
         
         <mat-card-content fxLayoutAlign="space-between">
           <span class="date"> 
-            {{ event.startDate | date }} - {{ event.endDate | date }} 
+            {{ event.startDate | date: 'dd/MM/yyyy'  }} - {{ event.endDate | date: 'dd/MM/yyyy' }} 
           </span>
     
           <span class="place">
@@ -48,7 +48,8 @@
 
           <button mat-raised-button
                   fxFlexAlign="end"
-                  class="buyButton">Comprar</button>
+                  class="buyButton"
+                  [routerLink]="['/sesiones', event.id]">Comprar</button>
 
         </mat-card-actions>
 

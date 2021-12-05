@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { EventInfo } from '../interfaces/event-info.interface';
 import { Event } from "../interfaces/event.interface";
-
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,7 @@ export class GetDataService {
     return this.http.get<Event[]>( `${this.baseUrl}`);
   }
 
-  // getSortData(events: Event[]): Event[] {
-  //   return events.sort( ( a, b ) => {
-  //     return <any> new Date( b.endDate ) - <any> new Date( a.endDate )
-  //   } )
-  // }
+  getEventById( id: string): Observable<EventInfo> {
+    return this.http.get<EventInfo>(`../../../assets/data/event-info-${ id }.json`)
+  }
 }

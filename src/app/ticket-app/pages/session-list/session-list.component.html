@@ -1,8 +1,62 @@
-<p>session-list works!</p>
 
-
-<app-shopping-cart></app-shopping-cart>
-
-<li>
+<li class="volver"
+    fxLayout="flex"
+    fxLayoutAlign="end">
     <a routerLink="/home"> Ir a Home </a>
 </li>
+
+
+<div class="rowContainer" fxLayout="row wrap"
+     flexLayout.sm="column"
+     >
+     <div fxFlex="50"
+     fxFlex.sm="100"
+     fxFlex.xs="100"
+     fxLayoutAlign="center"
+     >
+        <div class="sessions">
+
+            <div *ngIf="!eventInfo; else divEventInfo">
+                <p>
+                    EVENT INFO NOT FOUND
+                </p>
+            </div>
+            
+            <ng-template #divEventInfo>
+                {{ eventInfo | json }}
+
+                <div class="fechasDisponibles"
+                     *ngFor="let session of eventInfo.sessions">
+                     <span fxLayoutAlign="start"
+                           fxFlex="70">
+                        Fecha: {{ session.date | date: 'dd/MM/yyyy' }}, Disponibilidad: {{ session.availability }}
+                     </span>
+
+                     <span fxLayoutAlign="end"
+                           fxFlex="30">
+
+                         <button> - </button>
+                          {{ sessionNumber }}
+                         <button> + </button>
+                     </span>
+                </div>
+
+            </ng-template>
+    
+        </div>
+    
+     </div>
+
+     <div fxFlex="50"
+     fxFlex.sm="100"
+     fxFlex.xs="100"
+     fxLayoutAlign="center"
+     >
+        
+        <app-shopping-cart></app-shopping-cart>
+    
+     </div>
+
+</div>
+
+

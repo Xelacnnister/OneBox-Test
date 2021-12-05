@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'sesiones',
+    path: 'sesiones/:id',
     component: SessionListComponent
   },
   {
