@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GetDataService } from '../../services/get-data.service';
-import { Event } from "../../interfaces/event.interface";
 
 @Component({
   selector: 'app-home',
@@ -10,15 +8,10 @@ import { Event } from "../../interfaces/event.interface";
 })
 export class HomeComponent implements OnInit {
 
-  // events: Event[] = [];
 
-  constructor(  ) { } //private getDataService: GetDataService
+  constructor(  ) { }
 
   ngOnInit(): void {
-
-  //   this.getDataService.getEvents()
-  //     .subscribe( resp => { this.events = resp; } );
-
   }
 
 }

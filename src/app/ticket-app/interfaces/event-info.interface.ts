@@ -1,3 +1,4 @@
+/** Interface de la data de evento recibida **/
 export interface EventInfo {
     event:    Event;
     sessions: Session[];

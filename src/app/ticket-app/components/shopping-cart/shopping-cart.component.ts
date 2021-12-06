@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalDataService } from '../../services/global-data.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  constructor( private globaldataservice: GlobalDataService ) { }
 
   ngOnInit(): void {
   }

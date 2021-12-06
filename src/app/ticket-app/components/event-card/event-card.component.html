@@ -1,8 +1,10 @@
+<!-- Componente de la targeta del evento -->
 
 <div class="rowContainer" fxLayout="row wrap"
      flexLayout.sm="column"
      >
 
+  <!-- El *ngFor muestra las tarjetas de evento ordenadas por forma ascendente por endDate gracias al pipe orderBy: 'endDate' -->
   <div fxFlex="50"
        fxFlex.sm="100"
        fxFlex.xs="100"
@@ -26,6 +28,9 @@
       <div fxLayout="column" >
         
         <mat-card-content fxLayoutAlign="space-between">
+
+
+          <!-- Muestra la primera y última fecha del evento en formato 'dd/MM/yyyy' usando el build in pipe date -->
           <span class="date"> 
             {{ event.startDate | date: 'dd/MM/yyyy'  }} - {{ event.endDate | date: 'dd/MM/yyyy' }} 
           </span>
@@ -37,6 +42,8 @@
 
         <mat-card-content class="description">
 
+
+          <!-- Permite mostrar el texto de la propiedad mostrando correctamente los tags dentro del string -->
           <p  [innerHTML]= "event.description"></p>
 
         </mat-card-content>

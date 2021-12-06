@@ -67,11 +67,14 @@ import { Event } from "../../interfaces/event.interface";
 })
 export class EventCardComponent implements OnInit {
 
-  events      : Event[] = [];
+  events: Event[] = [];
 
   constructor( private getDataService: GetDataService ) { }
 
   ngOnInit(): void {
+
+
+    /** Recibe la data de los eventos para poder mostrarla con *ngFor**/
 
     this.getDataService.getEvents()
       .subscribe( resp => { this.events = resp ; } );

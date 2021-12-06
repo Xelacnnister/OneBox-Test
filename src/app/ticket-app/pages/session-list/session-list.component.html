@@ -16,6 +16,9 @@
      >
         <div class="sessions">
 
+
+            <!-- En caso de no haber información del evento, se muestra el EVENT INFO NOT FOUND -->
+
             <div *ngIf="!eventInfo; else divEventInfo">
                 <p>
                     EVENT INFO NOT FOUND
@@ -23,22 +26,40 @@
             </div>
             
             <ng-template #divEventInfo>
-                {{ eventInfo | json }}
+                <!-- {{ eventInfo | json }} -->
 
                 <div class="fechasDisponibles"
-                     *ngFor="let session of eventInfo.sessions">
+                     *ngFor="let session of eventInfo.sessions; index as i">
                      <span fxLayoutAlign="start"
                            fxFlex="70">
                         Fecha: {{ session.date | date: 'dd/MM/yyyy' }}, Disponibilidad: {{ session.availability }}
                      </span>
 
-                     <span fxLayoutAlign="end"
-                           fxFlex="30">
 
-                         <button> - </button>
-                          {{ sessionNumber }}
-                         <button> + </button>
-                     </span>
+                     <!-- Intentaba mostrar la información diferente tras la refactorización -->
+
+                     <!-- <div *ngIf="buyedTickets.length === 0; else divBuyedTickets">
+                        <span fxLayoutAlign="end"
+                                fxFlex="30" 
+                                >
+                            <button (click)="modNumbOfSessions(-1, i)"> - </button>
+                                0
+                            <button (click)="modNumbOfSessions(1, i)"> + </button>
+                        </span>
+
+                     </div> -->
+
+                     <!-- <ng-template #divBuyedTickets> -->
+                        <span fxLayoutAlign="end"
+                                fxFlex="30" 
+                                >
+                            <button (click)="modNumbOfSessions(-1, i)"> - </button>
+                            {{ sessionsNumber[i]  }}
+                            <button (click)="modNumbOfSessions(1, i)"> + </button>
+                        </span>
+
+                     <!-- </ng-template> -->
+                     
                 </div>
 
             </ng-template>
@@ -47,6 +68,9 @@
     
      </div>
 
+     
+     <!-- Shopping-card component -->
+     
      <div fxFlex="50"
      fxFlex.sm="100"
      fxFlex.xs="100"

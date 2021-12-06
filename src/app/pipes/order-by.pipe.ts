@@ -1,3 +1,5 @@
+/** Pipe que permite ordenar los objetos generados por el *ngFor en orden ascendente de fecha */
+
 import { Pipe, PipeTransform } from '@angular/core';
 import { orderBy } from 'lodash';
 
